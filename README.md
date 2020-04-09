@@ -31,7 +31,7 @@ The OpenTrace reference implementation comprises:
 ## Encryption Key
 #### Generate the key
 An encryption key is required to encrypt and decrypt all Temporary Identifiers (TempIDs).
-The key's size depends on the algorithm use, recommended size is 256 bits (i.e., 32 bytes).
+The recommended key's size is 256 bits (i.e., 32 bytes).
 It needs to be converted to Base64 for storage in GCP Secret Manager.
 
 A simple method to generate a random key and encode it in Base64 is:
@@ -48,7 +48,7 @@ The default cloud function IAM user is `<project-id>@appspot.gserviceaccount.com
 This can be done at [IAM Admin](https://console.cloud.google.com/iam-admin/iam) page.
 
 
-##Firebase Storage Buckets
+## Firebase Storage Buckets
 Set up 2 Storage Buckets from Firebase Console:
 1. **upload bucket**: allow Android/iOS apps to upload files here, block read access using the rule below.
 ```
@@ -75,7 +75,7 @@ service firebase.storage {
 ```
 
 
-##Firebase CLI and login
+## Firebase CLI and login
 Install the Firebase CLI via npm and connect to the account:
 ```shell script
 npm install -g firebase-tools
@@ -150,4 +150,4 @@ firebase deploy
 ```
 Once deployed, view the Functions in [Firebase console](https://console.firebase.google.com/) or at [GCP Cloud Functions](https://console.cloud.google.com/functions/list).
 
-If you have set up either the [Android app](https://github.com/opentrace-community/opentrace-android) or [iOS app](https://github.com/opentrace-community/opentrace-ios), you can test the functions by opening the app, going through the registration and verify that the app displays a pin code in the Upload page.
+If you have set up either the [Android app](https://github.com/opentrace-community/opentrace-android) or [iOS app](https://github.com/opentrace-community/opentrace-ios), you can test the functions by opening the app, going through the registration and verifying that the app displays a pin code in the Upload page.
