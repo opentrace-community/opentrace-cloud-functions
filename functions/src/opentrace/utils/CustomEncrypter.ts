@@ -1,7 +1,7 @@
-import * as crypto from "crypto";
-import config from "../../config";
+import crypto from "crypto";
+import {config} from "../../config";
 
-class CustomEncrypter {
+export class CustomEncrypter {
 
   algorithm: string;
   key: Buffer;
@@ -71,5 +71,3 @@ class CustomEncrypter {
     return this.decrypt(decodedCipherTextB64, decodedIvB64, decodedAuthTagB64);
   }
 }
-
-export default CustomEncrypter;

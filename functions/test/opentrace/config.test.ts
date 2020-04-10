@@ -1,11 +1,11 @@
-import * as admin from "firebase-admin";
-import * as functions from "firebase-functions";
-import * as chai from "chai";
-import * as crypto from "crypto";
+import admin from "firebase-admin";
+import functions from "firebase-functions";
+import chai from "chai";
+import crypto from "crypto";
 
-import config from "../../src/config";
+import {config} from "../../src/config";
 import {FunctionsTestWrapper} from "../index.test";
-import getEncryptionKey from "../../src/opentrace/utils/getEncryptionKey";
+import {getEncryptionKey} from "../../src/opentrace/utils/getEncryptionKey";
 
 describe('config.ts', function () {
   describe('#encryption', function () {
@@ -48,10 +48,10 @@ describe('config.ts', function () {
       const uid = crypto.randomBytes(28).toString("utf-8");
 
       return config.upload.pinGenerator.generatePin(uid)
-        .catch(error => {
+        .catch((error: any) => {
           chai.assert(false, `generatePin throws error: ${error.message}`);
         })
-        .then(async pin => {
+        .then(async (pin: any) => {
           chai.assert(pin == await config.upload.pinGenerator.generatePin(uid),
             "Pin is not consistent between different calls");
         });

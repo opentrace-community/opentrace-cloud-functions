@@ -1,6 +1,6 @@
-import * as functions from "firebase-functions";
+import functions from "firebase-functions";
 
-import config from "./config";
+import {config} from "./config";
 
 /**
  * Wrapper around functions to handle authentication

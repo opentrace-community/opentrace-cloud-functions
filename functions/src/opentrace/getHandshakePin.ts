@@ -1,11 +1,10 @@
-import * as functions from "firebase-functions";
-
-import config from "../config";
+import functions from "firebase-functions";
+import {config} from "../config";
 
 /**
  * Get the handshake pin for a user.
  */
-const getHandshakePin = async (uid: string) => {
+export const getHandshakePin = async (uid: string) => {
   console.log('getHandshakePin:', 'uid', uid);
 
   try {
@@ -20,5 +19,3 @@ const getHandshakePin = async (uid: string) => {
 };
 
 export const getUserHandshakePin = config.upload.pinGenerator.generatePin;
-
-export default getHandshakePin;
