@@ -45,7 +45,9 @@ Create a new secret in [Secret Manager](https://console.cloud.google.com/securit
 
 #### Firebase Secret Access for Cloud Functions
 The default cloud function IAM user is `<project-id>@appspot.gserviceaccount.com`, it needs to be given the **Secret Manager Secret Accessor** role in order to read data from Secret Manager.
-This can be done at [IAM Admin](https://console.cloud.google.com/iam-admin/iam) page.
+This can be done at [IAM Admin](https://console.cloud.google.com/iam-admin/iam) page. 
+
+**Note**: based on your Firebase configuration you might need to give the role to the `firebase-adminsdk-<random5chars>@project-id.iam.gserviceaccount.com` user instead. Please, check when you get to the [Test](#test) section below.
 
 
 ## Firebase Storage Buckets
