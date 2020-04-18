@@ -4,5 +4,15 @@
       "npm --prefix \"$RESOURCE_DIR\" run lint",
       "npm --prefix \"$RESOURCE_DIR\" run build"
     ]
-  }
+  },
+  "storage": [
+    {
+      "target": "upload",
+      "rules": "storage.upload.rules"
+    },
+    {
+      "target": "archive",
+      "rules": "storage.archive.rules"
+    }
+  ]
 }
