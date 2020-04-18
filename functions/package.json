@@ -30,5 +30,7 @@
     "@types/chai": "^4.2.0",
     "ts-node": "^8.8.2"
   },
-  "private": true
+  "private": true,
+  "license": "GPL-3.0+",
+  "copyright.owner": "Singapore Government Agency"
 }
