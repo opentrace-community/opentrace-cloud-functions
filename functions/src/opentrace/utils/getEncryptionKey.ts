@@ -1,11 +1,11 @@
 import {SecretManagerServiceClient} from "@google-cloud/secret-manager";
 
-import config from "../../config";
+import {config} from "../../config";
 
 const SECRET_KEY = `projects/${config.projectId}/secrets/${config.encryption.keyPath}`;
 const SECRET_KEY_DEFAULT_VERSION = `${SECRET_KEY}/versions/${config.encryption.defaultVersion}`;
 
-const getEncryptionKey = async (): Promise<Buffer> => getEncryptionSecret(SECRET_KEY_DEFAULT_VERSION);
+export const getEncryptionKey = async (): Promise<Buffer> => getEncryptionSecret(SECRET_KEY_DEFAULT_VERSION);
 
 export const getAllEncryptionKeys = async (): Promise<Buffer[]> => {
   const secretManagerClient = new SecretManagerServiceClient();
@@ -25,7 +25,7 @@ export const getAllEncryptionKeys = async (): Promise<Buffer[]> => {
 
 const isDefaultKey = (_: string) => SECRET_KEY_DEFAULT_VERSION.substring(SECRET_KEY_DEFAULT_VERSION.length - 2) === _.substring(_.length - 2);
 
-async function getEncryptionSecret(keyPathIncludingVersion: string): Promise<Buffer> {
+export async function getEncryptionSecret(keyPathIncludingVersion: string): Promise<Buffer> {
   const secretManagerClient = new SecretManagerServiceClient();
 
   console.log("getEncryptionSecret:", `Getting encryption key: ${keyPathIncludingVersion}`);
@@ -36,5 +36,3 @@ async function getEncryptionSecret(keyPathIncludingVersion: string): Promise<Buf
   // @ts-ignore
   return Buffer.from(secret.payload.data.toString(), 'base64');
 }
-
-export default getEncryptionKey;

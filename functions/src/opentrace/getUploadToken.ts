@@ -1,15 +1,15 @@
-import * as functions from "firebase-functions";
-import * as admin from "firebase-admin";
+import functions from "firebase-functions";
+import admin from "firebase-admin";
 
-import config from "../config";
-import getEncryptionKey from "./utils/getEncryptionKey";
-import CustomEncrypter from "./utils/CustomEncrypter";
-import formatTimestamp from "./utils/formatTimestamp";
+import {config} from "../config";
+import {getEncryptionKey} from "./utils/getEncryptionKey";
+import {CustomEncrypter} from "./utils/CustomEncrypter";
+import {formatTimestamp} from "./utils/formatTimestamp";
 
 /**
  * Get upload token by passing in a secret string as `data`
  */
-const getUploadToken = async (uid: string, data: any, context: functions.https.CallableContext) => {
+export const getUploadToken = async (uid: string, data: any, context: functions.https.CallableContext) => {
   console.log('getUploadToken:', 'uid', uid, 'data', data, 'ip', context.rawRequest.ip);
 
   let valid = false;
@@ -109,5 +109,3 @@ export function validateToken(token: string, encryptionKey: Buffer, validateToke
 
   return {uid: uid, uploadCode: upload};
 }
-
-export default getUploadToken;

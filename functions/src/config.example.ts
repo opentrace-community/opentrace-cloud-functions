@@ -1,8 +1,8 @@
-import FunctionConfig from "./opentrace/types/FunctionConfig";
-import Authenticator from "./opentrace/utils/Authenticator";
-import PinGenerator from "./opentrace/utils/PinGenerator";
+import {FunctionConfig} from "./opentrace/types/FunctionConfig";
+import {Authenticator} from "./opentrace/utils/Authenticator";
+import {PinGenerator} from "./opentrace/utils/PinGenerator";
 
-const config: FunctionConfig = {
+export const config: FunctionConfig = {
   projectId: "",
   regions: [],
   utcOffset: 0,
@@ -26,5 +26,3 @@ const config: FunctionConfig = {
     bucketForArchive: "archive-bucket",
   },
 };
-
-export default config;

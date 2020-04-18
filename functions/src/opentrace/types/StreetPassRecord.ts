@@ -8,7 +8,7 @@
  *   Transmission Power txPower
  *   Organization org
  */
-interface StreetPassRecord {
+export interface StreetPassRecord {
     timestamp: number,
     msg?: string,
     modelC: string,
@@ -24,5 +24,3 @@ interface StreetPassRecord {
     contactIdValidFrom?: number,
     contactIdValidTo?: number,
 }
-
-export default StreetPassRecord;

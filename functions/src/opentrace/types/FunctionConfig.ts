@@ -1,10 +1,10 @@
-import Authenticator from "../utils/Authenticator";
-import PinGenerator from "../utils/PinGenerator";
+import {Authenticator} from "../utils/Authenticator";
+import {PinGenerator} from "../utils/PinGenerator";
 
 // SUPPORTED_REGIONS from function-configuration.d.ts
 declare type SUPPORTED_REGIONS = "us-central1" | "us-east1" | "us-east4" | "europe-west1" | "europe-west2" | "asia-east2" | "asia-northeast1";
 
-interface FunctionConfig {
+export interface FunctionConfig {
   projectId: string // Firebase Project ID
   regions: SUPPORTED_REGIONS[]
   utcOffset: number | string
@@ -28,5 +28,3 @@ interface FunctionConfig {
     bucketForArchive: string
   }
 }
-
-export default FunctionConfig;

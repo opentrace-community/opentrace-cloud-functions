@@ -1,8 +1,8 @@
-import * as moment from "moment";
+import moment from "moment";
 
-import config from "../config";
-import CustomEncrypter from "./utils/CustomEncrypter";
-import getEncryptionKey from "./utils/getEncryptionKey";
+import {config} from "../config";
+import {CustomEncrypter} from "./utils/CustomEncrypter";
+import {getEncryptionKey} from "./utils/getEncryptionKey";
 
 const UID_SIZE = 21;
 const TIME_SIZE = 4;
@@ -11,7 +11,7 @@ const TEMPID_SIZE = UID_SIZE + TIME_SIZE * 2;
 const IV_SIZE = 16;
 const AUTHTAG_SIZE = 16;
 
-const getTempIDs = async (uid: string) => {
+export const getTempIDs = async (uid: string) => {
   console.log('getTempIDs:', 'uid', uid);
 
   const encryptionKey = await getEncryptionKey();
@@ -76,5 +76,3 @@ export function decryptTempID(tempID: string, encryptionKey: Buffer): { uid: str
     expiryTime: expiryTime
   };
 }
-
-export default getTempIDs;
