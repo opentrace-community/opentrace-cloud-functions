@@ -4,6 +4,7 @@ import PinGenerator from "./opentrace/utils/PinGenerator";
 
 const config: FunctionConfig = {
   projectId: "",
+  projectNumber: "",
   regions: [],
   utcOffset: 0,
   authenticator: new Authenticator(),
