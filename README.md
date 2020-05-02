@@ -28,6 +28,8 @@ The OpenTrace reference implementation comprises:
 2. Enable Google Analytics for the project, to be used for Firebase Crashlytics and Firebase Remote Config.
 3. Make sure to upgrade the project from the "Spark" free plan to the "Blaze" pay-as-you-go plan to avoid future quota issues.
 
+#### Firebase Authentication
+OpenTrace uses firebase auth to authenticate mobile users via OTP. An alternative approach is to setup your own OTP service to validate and store the mobile numbers in your own backend. This is not included as part of OpenTrace. 
 
 ## Encryption Key
 #### Generate the key
