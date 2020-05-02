@@ -45,6 +45,9 @@ Create a new secret in [Secret Manager](https://console.cloud.google.com/securit
 
 If you have the `gcloud` CLI installed you can do this in your terminal:
 
+#### Key Rotation
+It is highly recommended that the encryption key is rotated on a regular basis. This step is not included as part of OpenTrace.
+
 ```shell script
 # You can avoid using the project flag by setting a global default project:
 #  gcloud config set project YOUR_PROJECT_ID
