@@ -40,13 +40,13 @@ A simple method to generate a random key and encode it in Base64 is:
 head -c32 /dev/urandom | base64
 ```
 
+#### Key Rotation
+It is highly recommended that the encryption key is rotated on a regular basis. This step is not included as part of OpenTrace.
+
 #### Store the key in Secret Manager
 Create a new secret in [Secret Manager](https://console.cloud.google.com/security/secret-manager) and add a new version with the key generated above. Note that this requires Billing enabled.
 
 If you have the `gcloud` CLI installed you can do this in your terminal:
-
-#### Key Rotation
-It is highly recommended that the encryption key is rotated on a regular basis. This step is not included as part of OpenTrace.
 
 ```shell script
 # You can avoid using the project flag by setting a global default project:
@@ -60,7 +60,6 @@ gcloud --project="${GCLOUD_PROJECT}" secrets create "EncryptionKey" --replicatio
 echo -n "YOUR SECRET RANDOM KEY" | \
   gcloud --project="${GCLOUD_PROJECT}" secrets versions add "EncryptionKey" --data-file=-
 ```
-
 
 #### Firebase Secret Access for Cloud Functions
 The default cloud function IAM user is `<project-id>@appspot.gserviceaccount.com`, it needs to be given the **Secret Manager Secret Accessor** role in order to read data from Secret Manager.
