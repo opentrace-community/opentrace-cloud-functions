@@ -215,3 +215,12 @@ firebase deploy --only functions
 Once deployed, view the Functions in [Firebase console](https://console.firebase.google.com/) or at [GCP Cloud Functions](https://console.cloud.google.com/functions/list).
 
 If you have set up either the [Android app](https://github.com/opentrace-community/opentrace-android) or [iOS app](https://github.com/opentrace-community/opentrace-ios), you can test the functions by opening the app, going through the registration and verifying that the app displays a pin code in the Upload page.
+
+## ChangeLog
+
+1.0.1
+*   Added alternative for Firebase Authentication
+*   Recommend key rotation
+
+1.0.0
+*   Initial Release
