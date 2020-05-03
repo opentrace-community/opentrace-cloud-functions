@@ -1,6 +1,7 @@
 import FunctionConfig from "./opentrace/types/FunctionConfig";
 import Authenticator from "./opentrace/utils/Authenticator";
 import PinGenerator from "./opentrace/utils/PinGenerator";
+import DataForwarder from "./opentrace/utils/DataForwarder";
 
 const config: FunctionConfig = {
   projectId: "",
@@ -24,6 +25,8 @@ const config: FunctionConfig = {
     testsDir: "tests",
     tokenValidityPeriod: 2, // in hours
     bucketForArchive: "archive-bucket",
+    logDBCollection: "uploadLogs",
+    dataForwarder: new DataForwarder(),
   },
 };
 

@@ -79,13 +79,13 @@ export async function retrieveUploadCodes(): Promise<string[]> {
 /**
  * Validate upload token by decrypting it and checking if it's still withing validity period
  * @param token
- * @param encryptionKey
  * @param validateTokenTimestamp
  */
-export function validateToken(token: string, encryptionKey: Buffer, validateTokenTimestamp: boolean = true) {
+export async function validateToken(token: string, validateTokenTimestamp: boolean = true) {
   const payloadData = Buffer.from(token, 'base64');
 
   // Prepare encrypter
+  const encryptionKey = await getEncryptionKey();
   const customEncrypter = new CustomEncrypter(encryptionKey);
 
   // Decrypt UUID
@@ -104,8 +104,6 @@ export function validateToken(token: string, encryptionKey: Buffer, validateToke
     console.error(new Error('validateToken: Upload code is invalid.'));
     throw new Error('Upload code is invalid.');
   }
-
-  // Note: Cannot validate uid as file metadata does not contain uid
 
   return {uid: uid, uploadCode: upload};
 }
