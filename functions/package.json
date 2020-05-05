@@ -1,5 +1,6 @@
 {
   "name": "functions",
+  "version": "0.0.1",
   "scripts": {
     "lint": "tslint --project tsconfig.json",
     "build": "tsc",
