@@ -3,9 +3,9 @@ import * as functions from "firebase-functions";
 import * as chai from "chai";
 import * as crypto from "crypto";
 
-import config from "../../src/config";
+import config from "../../config";
 import {FunctionsTestWrapper} from "../index.test";
-import getEncryptionKey from "../../src/opentrace/utils/getEncryptionKey";
+import getEncryptionKey from "../../opentrace/utils/getEncryptionKey";
 
 describe('config.ts', function () {
   describe('#encryption', function () {
