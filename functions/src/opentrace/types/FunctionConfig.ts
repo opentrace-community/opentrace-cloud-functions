@@ -7,6 +7,7 @@ declare type SUPPORTED_REGIONS = "us-central1" | "us-east1" | "us-east4" | "euro
 
 interface FunctionConfig {
   projectId: string // Firebase Project ID
+  projectNumber: string
   regions: SUPPORTED_REGIONS[]
   utcOffset: number | string
   authenticator: Authenticator

@@ -2,7 +2,7 @@ import {SecretManagerServiceClient} from "@google-cloud/secret-manager";
 
 import config from "../../config";
 
-const SECRET_KEY = `projects/${config.projectId}/secrets/${config.encryption.keyPath}`;
+const SECRET_KEY = `projects/${config.projectNumber}/secrets/${config.encryption.keyPath}`;
 const SECRET_KEY_DEFAULT_VERSION = `${SECRET_KEY}/versions/${config.encryption.defaultVersion}`;
 
 const getEncryptionKey = async (): Promise<Buffer> => getEncryptionSecret(SECRET_KEY_DEFAULT_VERSION);

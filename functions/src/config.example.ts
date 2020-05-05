@@ -5,6 +5,7 @@ import DataForwarder from "./opentrace/utils/DataForwarder";
 
 const config: FunctionConfig = {
   projectId: "",
+  projectNumber: "",
   regions: [],
   utcOffset: 0,
   authenticator: new Authenticator(),
